@@ -10,6 +10,11 @@ The Add-on is installed through NuGet. The packages are, at this moment, not pub
 
 Please see [known issues](#known-issues) and [planned features](#planned-features).
 
+## Requirements
+
+* EPiServer.CMS.UI.Core 10.1.1
+* EPiServer.CMS.Core 10.1.0
+
 ## How to use
 
 At least one taxonomy data must be defined to give editors anything to work with:
