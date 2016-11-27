@@ -1,0 +1,31 @@
+﻿<language name="English" id="en">
+	<contentrepositories>
+		<taxonomy>
+			<name>Taxonomy</name>
+		</taxonomy>
+	</contentrepositories>
+
+	<components>
+		<taxonomy>
+			<title>Taxonomy</title>
+			<description>Taxonomy management</description>
+		</taxonomy>
+	</components>
+
+	<groups>
+		<taxonomy>Taxonomy</taxonomy>
+	</groups>
+
+	<contenttypes>
+		<TaxonomyRoot>
+			<name>Taxonomy Root</name>
+			<description>This content type is used as a root for taxonomy.</description>
+		</TaxonomyRoot>
+	</contenttypes>
+
+	<admin>
+		<menuheadings>
+			<taxonomy>Taxonomy</taxonomy>
+		</menuheadings>
+	</admin>
+</language>

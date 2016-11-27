@@ -1,0 +1,21 @@
+﻿<?xml version="1.0"?>
+<package >
+	<metadata>
+		<id>$id$</id>
+		<version>$version$</version>
+		<title>$title$</title>
+		<authors>$author$</authors>
+		<owners>$author$</owners>
+		<projectUrl>https://github.com/johanpetersson/episerver-taxonomy</projectUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>Define and manage taxonomy in Episerver CMS.</description>
+		<releaseNotes></releaseNotes>
+		<copyright>$copyright$</copyright>
+		<tags>Episerver taxonomy categoires tags</tags>
+	</metadata>
+	<files>
+		<file src="Content\module.config" target="Content\modules\_protected\$id$\module.config" />
+		<file src="Content\EmbededLangFiles\**" target="Content\modules\_protected\$id$\EmbededLangFiles" />
+		<file src="Content\ClientResources\**" target="Content\modules\_protected\$id$\ClientResources\$version$" />
+	</files>
+</package>

@@ -181,6 +181,7 @@
     <Compile Include="UISettings.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Dodavinkeln.Taxonomy.Core.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

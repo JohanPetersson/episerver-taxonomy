@@ -33,6 +33,6 @@
         /// <summary>
         ///     The widget that should be used by this library
         /// </summary>
-        public const string CustomNavigationWidget = "dodavinkeln/component/TaxonomyNavigationTree";
+        public const string CustomNavigationWidget = "taxonomy/component/TaxonomyNavigationTree";
     }
 }
