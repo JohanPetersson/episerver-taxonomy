@@ -4,13 +4,13 @@ By Johan Petersson [http://dodavinkeln.se](http://dodavinkeln.se)
 
 ## What it is
 
-<img width="300" style="float:right; margin:0 0 10px 10px;" src="https://raw.githubusercontent.com/johanpetersson/episerver-taxonomy/master/taxonomy.png" alt="" />
-
 This an Episerver Add-on that helps editors to manage taxonomy within Episerver's editing UI. Developers can define different types of taxonomy items, please see the [how to use section](#how-to-use) below.
 
 The Add-on is installed through NuGet. The packages are, at this moment, not published to a public feed yet so you have to [download them](releases) manually, version 1.0 will be published to a public feed. The Add-on is split into two packages, one for the core functionality that you can install in any class library without getting a lot of UI files and one package for the UI that you can install in the web project.
 
 Please see [known issues](#known-issues) and [planned features](#planned-features).
+
+![Screenshot from Episerver editing UI](taxonomy.png?raw=true "The component")
 
 ## Requirements
 
