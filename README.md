@@ -29,7 +29,7 @@ At least one taxonomy data must be defined to give editors anything to work with
     {
     }
 
-The only thing that's needed is to inherit from `TaxonomyData`. You can define different types of taxonomy items, e.g. `CategoryData`, `CountryData` and add more properties to the content types.
+The only thing that's needed is to inherit from `TaxonomyData`. You can define different types of taxonomy items, e.g. `CategoryData`, `CountryData` and even add additional properties other than the built-in ones.
 
 Then you can add properties to content types so editors can select taxonomy items. Since `TaxonomyData` is an implementation of `IContent` you can use any property that accepts `ContentReference`. This Add-on has a convenient way to define a `ContentReference` property by marking it with the `[Taxonomy]` attribute:
 
