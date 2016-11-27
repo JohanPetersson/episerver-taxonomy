@@ -11,11 +11,10 @@
 		<description>Define and manage taxonomy in Episerver CMS.</description>
 		<releaseNotes></releaseNotes>
 		<copyright>$copyright$</copyright>
-		<tags>Episerver taxonomy categoires tags</tags>
+		<tags>Episerver taxonomy categories tags</tags>
 	</metadata>
 	<files>
 		<file src="Content\module.config" target="Content\modules\_protected\$id$\module.config" />
-		<file src="Content\EmbededLangFiles\**" target="Content\modules\_protected\$id$\EmbededLangFiles" />
-		<file src="Content\ClientResources\**" target="Content\modules\_protected\$id$\ClientResources\$version$" />
+		<file src="Content\ClientResources\**" target="Content\modules\_protected\$id$\$version$\ClientResources" />
 	</files>
 </package>
