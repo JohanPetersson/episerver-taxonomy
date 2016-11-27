@@ -4,7 +4,7 @@ By Johan Petersson [http://dodavinkeln.se](http://dodavinkeln.se)
 
 ## What it is
 
-This an Episerver Add-on that helps editors to manage taxonomy within Episerver's editing UI. Developers can define different kind of taxonomy, please see the [how to use section](#how-to-use) below.
+This an Episerver Add-on that helps editors to manage taxonomy within Episerver's editing UI. Developers can define different types of taxonomy items, please see the [how to use section](#how-to-use) below.
 
 The Add-on is installed through NuGet. The packages are, at this moment, not published to a public feed yet so you have to [download them](releases) manually, version 1.0 will be published to a public feed. The Add-on is split into two packages, one for the core functionality that you can install in any class library without getting a lot of UI files and one package for the UI that you can install in the web project.
 
@@ -27,9 +27,9 @@ At least one taxonomy data must be defined to give editors anything to work with
     {
     }
 
-The only thing that's needed is to inherit from `TaxonomyData`. You can define different types of taxonomy, e.g. `CategoryData`, `CountryData` and add more properties to the content types.
+The only thing that's needed is to inherit from `TaxonomyData`. You can define different types of taxonomy items, e.g. `CategoryData`, `CountryData` and add more properties to the content types.
 
-Then you can add a property to a content type so editors can select taxonomy data. Since `TaxonomyData` is an implementation of `IContent` you can use any property that accepts `ContentReference`. This Add-on has a convenient way to define a `ContentReference` property by marking it with the `[Taxonomy]` attribute:
+Then you can add a properties to content types so editors can select taxonomy items. Since `TaxonomyData` is an implementation of `IContent` you can use any property that accepts `ContentReference`. This Add-on has a convenient way to define a `ContentReference` property by marking it with the `[Taxonomy]` attribute:
 
     [Taxonomy]
     [Display(Name = "News category")]
@@ -100,7 +100,7 @@ The Add-on doesn't support sorting of taxonomy yet and will throw errors when so
 
 ## Contribute
 
-Please [report issues here on GitHub](issues), clone the repository and create pull requests! Please see the [planned features](#planned-features) section for what you can contribute with.
+Please report issues here on GitHub, and why not clone the repository and create pull requests! Please see the [planned features](#planned-features) section for what you can contribute with.
 
 ## Planned features
 
