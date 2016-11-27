@@ -31,19 +31,19 @@ At least one taxonomy data must be defined to give editors anything to work with
 
 The only thing that's needed is to inherit from `TaxonomyData`. You can define different types of taxonomy items, e.g. `CategoryData`, `CountryData` and add more properties to the content types.
 
-Then you can add a properties to content types so editors can select taxonomy items. Since `TaxonomyData` is an implementation of `IContent` you can use any property that accepts `ContentReference`. This Add-on has a convenient way to define a `ContentReference` property by marking it with the `[Taxonomy]` attribute:
+Then you can add properties to content types so editors can select taxonomy items. Since `TaxonomyData` is an implementation of `IContent` you can use any property that accepts `ContentReference`. This Add-on has a convenient way to define a `ContentReference` property by marking it with the `[Taxonomy]` attribute:
 
     [Taxonomy]
     [Display(Name = "News category")]
     public virtual ContentReference NewsCategory { get; set; }
 
-Now the property is limitied to only accepts `TaxonomyData` and the select dialog is scoped to the taxonomy root. You can also use `ContentArea` in conjuction with `AllowedTypes(typeof(TaxonomyData))` to create a property for "tagging".
+Now the property is limitied to only accept `TaxonomyData` and the select dialog is scoped to the taxonomy root. You can also use `ContentArea` in conjuction with `AllowedTypes(typeof(TaxonomyData))` to create a property for "tagging".
 
 To render the category in a view you can use the built-in functionality:
 
     @Html.PropertyFor(x => x.CurrentPage.NewsCategory)
 
-This will output an anchor link `<a href="/taxonomy/categories/the-category">The category</a>`. This is probably not what we want to render, because the category might be used on different kinds of content types. What we want is a link that points to different kinds of "archives" depending on where it's used. That's why this Add-on also includes a partial router. You can define multiple routers for different kinds of content types, but at least one is needed:
+This will output an anchor link like `<a href="/taxonomy/categories/the-category">The category</a>`. This is probably not what we want to render, because the category might be used on different content types. What we want is a link that points to different "archives" depending on where it's used. That's why this Add-on also includes a partial router. You can define multiple routers for different content types, but at least one is needed:
 
     using System.Web.Routing;
     using Dodavinkeln.Taxonomy.Core;
@@ -94,7 +94,7 @@ If you want to e.g. filter the news articles based on this selected category, yo
         return this.View(viewModel);
     }
 
-Important part here is the name `currentTaxonomyData`.
+Important part here is the name `currentTaxonomyData`, this property will be automatically assigned to the selected `TaxonomyData` if any.
 
 ## Known issues
 
