@@ -7,10 +7,11 @@
     using EPiServer.Shell.ObjectEditing.EditorDescriptors;
 
     /// <summary>
-    ///     The descriptor for <see cref="ContentReference"/> properties that uses the <see cref="UIHint.Taxonomy"/>
-    ///     UI hint.
+    ///     The descriptor for <see cref="ContentReference"/> properties that uses the <see cref="UIHint.Taxonomy"/> UI hint.
     /// </summary>
-    [EditorDescriptorRegistration(TargetType = typeof(ContentReference), UIHint = UIHint.Taxonomy)]
+    [EditorDescriptorRegistration(
+        TargetType = typeof(ContentReference),
+        UIHint = UIHint.Taxonomy)]
     public class TaxonomyContentReferenceEditorDescriptor : ContentReferenceEditorDescriptor<TaxonomyData>
     {
         private readonly ContentRootService contentRootService;

@@ -171,6 +171,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UI\TaxonomyComponent.cs" />
+    <Compile Include="UI\TaxonomyContentAreaEditorDescriptor.cs" />
     <Compile Include="UI\TaxonomyContentReferenceEditorDescriptor.cs" />
     <Compile Include="UI\TaxonomyDataUIDescriptor.cs" />
     <Compile Include="UI\TaxonomyRootUIDescriptor.cs" />
