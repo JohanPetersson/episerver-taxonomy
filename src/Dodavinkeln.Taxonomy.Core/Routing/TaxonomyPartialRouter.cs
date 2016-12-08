@@ -106,8 +106,13 @@
                 return null;
             }
 
-            // TODO: Is there a better way to get the current page from requestContext?
-            var currentPage = this.urlResolver.Route(new UrlBuilder(requestContext.HttpContext.Request.Url)) as TForPageType;
+            TForPageType currentPage = null;
+
+            if (requestContext.HttpContext != null)
+            {
+                // TODO: Is there a better way to get the current page from requestContext?
+                currentPage = this.urlResolver.Route(new UrlBuilder(requestContext.HttpContext.Request.Url)) as TForPageType;
+            }
 
             // We should only use this router if the current page type is matching our instance.
             if (currentPage == null)
