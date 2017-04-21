@@ -63,7 +63,7 @@
         /// <summary>
         ///     Gets the linkable types for the repository.
         /// </summary>
-        public override IEnumerable<Type> LinkableTypes => new[] { typeof(TaxonomyData) };
+        public override IEnumerable<Type> LinkableTypes => null;
 
         /// <summary>
         ///     Gets the items that shouldn't have "For this content" in the repository.
