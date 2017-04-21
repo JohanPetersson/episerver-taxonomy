@@ -43,8 +43,8 @@
       <HintPath>..\..\packages\Castle.Windsor.3.3.0\lib\net45\Castle.Windsor.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Dodavinkeln.Taxonomy.Core, Version=0.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Dodavinkeln.Taxonomy.Core.0.2.0\lib\net462\Dodavinkeln.Taxonomy.Core.dll</HintPath>
+    <Reference Include="Dodavinkeln.Taxonomy.Core, Version=0.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Dodavinkeln.Taxonomy.Core.0.3.0\lib\net462\Dodavinkeln.Taxonomy.Core.dll</HintPath>
     </Reference>
     <Reference Include="EPiServer, Version=10.1.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
       <HintPath>..\..\packages\EPiServer.CMS.Core.10.1.0\lib\net45\EPiServer.dll</HintPath>
@@ -172,6 +172,7 @@
     <Compile Include="UI\TaxonomyComponent.cs" />
     <Compile Include="UI\TaxonomyContentAreaEditorDescriptor.cs" />
     <Compile Include="UI\TaxonomyContentReferenceEditorDescriptor.cs" />
+    <Compile Include="UI\TaxonomyContentReferenceListEditorDescriptor.cs" />
     <Compile Include="UI\TaxonomyDataUIDescriptor.cs" />
     <Compile Include="UI\TaxonomyRootUIDescriptor.cs" />
   </ItemGroup>
@@ -184,7 +185,14 @@
     <Analyzer Include="..\..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
     <Analyzer Include="..\..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Content\ClientResources\taxonomy\widget\TaxonomySelectionTree.js" />
+    <Content Include="Content\ClientResources\taxonomy\widget\TaxonomySelectionTreeNode.js" />
+    <Content Include="Content\ClientResources\taxonomy\widget\TaxonomySelector.js" />
+    <Content Include="Content\ClientResources\taxonomy\widget\TaxonomySelectorDialog.js" />
+    <Content Include="Content\ClientResources\taxonomy\widget\template\TaxonomySelectionTreeNode.html" />
+    <Content Include="Content\ClientResources\taxonomy\widget\template\TaxonomySelector.html" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Content\ClientResources\taxonomy\component\TaxonomyNavigationTree.js" />
     <None Include="Content\module.config" />
