@@ -160,8 +160,6 @@
                 return content;
             }
 
-            segmentContext.RoutedContentLink = null;
-
             return null;
         }
 
@@ -178,7 +176,7 @@
 
             while (true)
             {
-                var segment = this.ReadNextSegment(segmentContext);
+                var segment = segmentContext.GetNextValue(segmentContext.RemainingPath);
 
                 if (string.IsNullOrEmpty(segment.Next))
                 {
@@ -197,6 +195,10 @@
                 if (content is TaxonomyData)
                 {
                     taxonomyData = content as TaxonomyData;
+
+                    // Only set remaining path if we found what we were looking for,
+                    // otherwise let others try to parse the URL.
+                    segmentContext.RemainingPath = segment.Remaining;
                 }
             }
 
@@ -260,14 +262,6 @@
             }
 
             return basePathRoot;
-        }
-
-        private SegmentPair ReadNextSegment(SegmentContext segmentContext)
-        {
-            var segment = segmentContext.GetNextValue(segmentContext.RemainingPath);
-            segmentContext.RemainingPath = segment.Remaining;
-
-            return segment;
         }
     }
 }

@@ -43,9 +43,6 @@
       <HintPath>..\..\packages\Castle.Windsor.3.3.0\lib\net45\Castle.Windsor.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Dodavinkeln.Taxonomy.Core, Version=0.3.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Dodavinkeln.Taxonomy.Core.0.3.0\lib\net462\Dodavinkeln.Taxonomy.Core.dll</HintPath>
-    </Reference>
     <Reference Include="EPiServer, Version=10.1.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
       <HintPath>..\..\packages\EPiServer.CMS.Core.10.1.0\lib\net45\EPiServer.dll</HintPath>
       <Private>True</Private>
@@ -196,6 +193,12 @@
   <ItemGroup>
     <None Include="Content\ClientResources\taxonomy\component\TaxonomyNavigationTree.js" />
     <None Include="Content\module.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dodavinkeln.Taxonomy.Core\Dodavinkeln.Taxonomy.Core.csproj">
+      <Project>{a50905ed-131d-4360-a375-886ad7ebb09c}</Project>
+      <Name>Dodavinkeln.Taxonomy.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
