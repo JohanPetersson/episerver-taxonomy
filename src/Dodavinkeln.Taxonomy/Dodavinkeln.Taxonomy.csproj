@@ -178,15 +178,15 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\ClientResources\taxonomy\widget\TaxonomySelectionTree.js" />
-    <Content Include="Content\ClientResources\taxonomy\widget\TaxonomySelectionTreeNode.js" />
-    <Content Include="Content\ClientResources\taxonomy\widget\TaxonomySelector.js" />
-    <Content Include="Content\ClientResources\taxonomy\widget\TaxonomySelectorDialog.js" />
-    <Content Include="Content\ClientResources\taxonomy\widget\template\TaxonomySelectionTreeNode.html" />
-    <Content Include="Content\ClientResources\taxonomy\widget\template\TaxonomySelector.html" />
+    <Content Include="Content\ClientResources\widget\TaxonomySelectionTree.js" />
+    <Content Include="Content\ClientResources\widget\TaxonomySelectionTreeNode.js" />
+    <Content Include="Content\ClientResources\widget\TaxonomySelector.js" />
+    <Content Include="Content\ClientResources\widget\TaxonomySelectorDialog.js" />
+    <Content Include="Content\ClientResources\widget\template\TaxonomySelectionTreeNode.html" />
+    <Content Include="Content\ClientResources\widget\template\TaxonomySelector.html" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Content\ClientResources\taxonomy\component\TaxonomyNavigationTree.js" />
+    <None Include="Content\ClientResources\component\TaxonomyNavigationTree.js" />
     <None Include="Content\module.config" />
   </ItemGroup>
   <ItemGroup>
