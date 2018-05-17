@@ -174,16 +174,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Content\web.config" />
+    <None Include="CreatePackage.targets" />
+    <None Include="Content\web.config.uninstall.xdt" />
+    <None Include="Content\web.config.install.xdt" />
     <None Include="Dodavinkeln.Taxonomy.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\ClientResources\widget\TaxonomySelectionTree.js" />
-    <Content Include="Content\ClientResources\widget\TaxonomySelectionTreeNode.js" />
-    <Content Include="Content\ClientResources\widget\TaxonomySelector.js" />
-    <Content Include="Content\ClientResources\widget\TaxonomySelectorDialog.js" />
-    <Content Include="Content\ClientResources\widget\template\TaxonomySelectionTreeNode.html" />
-    <Content Include="Content\ClientResources\widget\template\TaxonomySelector.html" />
+    <None Include="Content\ClientResources\widget\TaxonomySelectionTree.js" />
+    <None Include="Content\ClientResources\widget\TaxonomySelectionTreeNode.js" />
+    <None Include="Content\ClientResources\widget\TaxonomySelector.js" />
+    <None Include="Content\ClientResources\widget\TaxonomySelectorDialog.js" />
+    <None Include="Content\ClientResources\widget\template\TaxonomySelectionTreeNode.html" />
+    <None Include="Content\ClientResources\widget\template\TaxonomySelector.html" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Content\ClientResources\component\TaxonomyNavigationTree.js" />
@@ -199,12 +203,7 @@
     <Analyzer Include="..\..\packages\StyleCop.Analyzers.1.0.2\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
     <Analyzer Include="..\..\packages\StyleCop.Analyzers.1.0.2\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+  <Import Project="$(ProjectDir)CreatePackage.targets" />
 </Project>

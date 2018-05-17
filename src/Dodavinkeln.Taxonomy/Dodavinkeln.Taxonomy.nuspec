@@ -11,10 +11,12 @@
 		<description>Define and manage taxonomy in Episerver CMS.</description>
 		<releaseNotes></releaseNotes>
 		<copyright>$copyright$</copyright>
-		<tags>Episerver taxonomy categories tags</tags>
+		<tags>Episerver taxonomy categories tags EPiServerModulePackage</tags>
 	</metadata>
 	<files>
-		<file src="Content\module.config" target="Content\modules\_protected\$id$\module.config" />
-		<file src="Content\ClientResources\**" target="Content\modules\_protected\$id$\$version$\ClientResources" />
+		<file src="bin\Package\Dodavinkeln.Taxonomy.zip" target="content\modules\_protected\$id$\" />
+		<file src="Content\web.config" target="content\modules\_protected\$id$\" />
+		<file src="Content\web.config.install.xdt" target="content" />
+		<file src="Content\web.config.uninstall.xdt" target="content" />
 	</files>
 </package>

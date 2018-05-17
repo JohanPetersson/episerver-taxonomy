@@ -1,0 +1,81 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+	<UsingTask TaskName="ZipDirectory" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll">
+		<ParameterGroup>
+			<InputPath ParameterType="System.String" Required="true" />
+			<OutputFileName ParameterType="System.String" Required="true" />
+			<OverwriteExistingFile ParameterType="System.Boolean" Required="false" />
+		</ParameterGroup>
+		<Task>
+			<Reference Include="System.IO.Compression.FileSystem" />
+			<Using Namespace="System.IO" />
+			<Using Namespace="System.IO.Compression" />
+			<Code Type="Fragment" Language="cs">
+				<![CDATA[        
+          if(this.OverwriteExistingFile) {
+            File.Delete(this.OutputFileName);
+          }
+          ZipFile.CreateFromDirectory(this.InputPath, this.OutputFileName);
+        ]]>
+			</Code>
+		</Task>
+	</UsingTask>
+
+	<UsingTask TaskName="GetVersion" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll">
+		<ParameterGroup>
+			<AssemblyPath ParameterType="System.String" Required="true" />
+			<Version ParameterType="System.String" Output="true" />
+		</ParameterGroup>
+
+		<Task>
+			<Using Namespace="System" />
+			<Using Namespace="System.Diagnostics" />
+			<Code Type="Fragment" Language="cs">
+				<![CDATA[
+            Log.LogMessage("Getting version details of assembly at: " + this.AssemblyPath, MessageImportance.High);
+
+            this.Version = FileVersionInfo.GetVersionInfo(this.AssemblyPath).FileVersion;
+        ]]>
+			</Code>
+		</Task>
+	</UsingTask>
+
+	<Target Name="CreatePackage" AfterTargets="Build">
+		<PropertyGroup>
+			<Version></Version>
+			<NuGetExe>$(SolutionDir)nuget.exe</NuGetExe>
+			<TempDir>$(OutDir)package\</TempDir>
+		</PropertyGroup>
+
+		<GetVersion AssemblyPath="$(TargetPath)">
+			<Output TaskParameter="Version" PropertyName="Version" />
+		</GetVersion>
+		
+		<ItemGroup>
+			<ClientResources Include="$(ProjectDir)\Content\ClientResources\**\*" />
+		</ItemGroup>
+
+		<Copy SourceFiles="$(ProjectDir)Content\module.config" DestinationFolder="$(TempDir)content" />
+		<Copy SourceFiles="@(ClientResources)" DestinationFiles="@(ClientResources -> '$(TempDir)content\$(Version)\ClientResources\%(RecursiveDir)%(Filename)%(Extension)')"/>
+
+		<!-- Update the module config with the version information -->
+		<XmlPoke XmlInputPath="$(TempDir)content\module.config" Query="/module/@clientResourceRelativePath" Value="$(Version)" />
+
+		<!-- Create the Zip file -->
+		<ZipDirectory
+			InputPath="$(TempDir)content\"
+			OutputFileName="$(TempDir)Dodavinkeln.Taxonomy.zip"
+			OverwriteExistingFile="true" />
+
+		<!-- Create the package -->
+		<PropertyGroup>
+			<NugetCommand>
+				"$(NuGetExe)" pack "$(ProjectPath)" -IncludeReferencedProjects -OutputDirectory "$(SolutionDir)releases"
+			</NugetCommand>
+		</PropertyGroup>
+
+		<Exec Command="$(NugetCommand)"/>
+
+		<!-- Cleanup -->
+		<RemoveDir Directories="$(TempDir)" />
+	</Target>
+</Project>

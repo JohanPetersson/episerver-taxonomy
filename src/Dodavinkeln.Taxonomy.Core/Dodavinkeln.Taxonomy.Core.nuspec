@@ -11,6 +11,6 @@
 		<description>Define and manage taxonomy in Episerver CMS.</description>
 		<releaseNotes></releaseNotes>
 		<copyright>$copyright$</copyright>
-		<tags>Episerver taxonomy categories tags</tags>
+		<tags>Episerver taxonomy categories tags EPiServerModulePackage</tags>
 	</metadata>
 </package>

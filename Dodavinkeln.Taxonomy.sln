@@ -9,7 +9,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dodavinkeln.Taxonomy.Core",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution items", "Solution items", "{4CC96832-C707-412E-9885-186AB77C73D6}"
 	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		LICENSE = LICENSE
 		nuget.config = nuget.config
+		nuget.exe = nuget.exe
 		README.md = README.md
 		stylecop.ruleset = stylecop.ruleset
 	EndProjectSection
@@ -31,5 +35,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1574EF9A-7740-4D5C-BB96-17F2970BE50A}
 	EndGlobalSection
 EndGlobal
