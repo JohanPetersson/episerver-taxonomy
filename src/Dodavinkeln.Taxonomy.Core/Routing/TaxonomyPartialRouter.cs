@@ -31,7 +31,6 @@
     ///      {
     ///          // Here we can return different roots depending on x.
     ///          // E.g. we could traverse and find the nearest news archive.
-    ///
     ///          return new ContentReference(7);
     ///      });
     ///
