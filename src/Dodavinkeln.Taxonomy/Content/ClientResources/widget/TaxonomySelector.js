@@ -76,6 +76,8 @@ function (
         },
 
         postCreate: function () {
+            this.inherited(arguments)
+
             if (!this.store) {
                 var registry = dependency.resolve('epi.storeregistry');
                 this.store = registry.get('epi.cms.content.light');
