@@ -51,6 +51,7 @@
             metadata.EditorConfiguration["settings"] = taxonomyRepositoryDescriptor;
             metadata.EditorConfiguration["roots"] = taxonomyRepositoryDescriptor.Roots;
             metadata.EditorConfiguration["showSearchBox"] = true;
+            metadata.EditorConfiguration["searchArea"] = UISettings.SearchArea;
         }
     }
 }

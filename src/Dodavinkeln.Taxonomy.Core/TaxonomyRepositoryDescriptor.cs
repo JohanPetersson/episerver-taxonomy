@@ -89,5 +89,7 @@
         ///     Gets the navigation widget.
         /// </summary>
         public override string CustomNavigationWidget => UISettings.CustomNavigationWidget;
+
+        public override string SearchArea => UISettings.SearchArea;
     }
 }

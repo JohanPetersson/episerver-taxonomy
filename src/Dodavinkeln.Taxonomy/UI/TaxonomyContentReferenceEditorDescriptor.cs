@@ -48,7 +48,7 @@
 
             // Needs to be set explicitly since we have a custom root.
             this.EditorConfiguration["showSearchBox"] = true;
-            this.EditorConfiguration["searchArea"] = "cms/pages";
+            this.EditorConfiguration["searchArea"] = UISettings.SearchArea;
         }
     }
 }

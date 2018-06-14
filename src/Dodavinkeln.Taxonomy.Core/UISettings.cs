@@ -34,5 +34,10 @@
         ///     The widget that should be used by this library
         /// </summary>
         public const string CustomNavigationWidget = "taxonomy/component/TaxonomyNavigationTree";
+
+        /// <summary>
+        ///     The area hits from this root should be displayed in.
+        /// </summary>
+        public const string SearchArea = "cms/pages";
     }
 }
